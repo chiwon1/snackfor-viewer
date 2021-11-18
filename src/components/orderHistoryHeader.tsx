@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { ORDER_AND_SHIPPING_RETRIEVE } from '../constants/ui';
 
 type Props = {
   user: string;
@@ -9,13 +10,17 @@ type Props = {
 
 const OrderHistoryHeader: FC<Props> = ({ user, orderQty, cancelQty }) => {
   return (
-    <Wrapper>
-      <StyledSpan>{`${user} 님`}</StyledSpan>
-      <StyledHr />
-      <StyledSpan>{`주문내역 ${orderQty} 건`}</StyledSpan>
-      <StyledHr />
-      <StyledSpan>{`주문내역 ${cancelQty} 건`}</StyledSpan>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <StyledSpan>{`${user} 님`}</StyledSpan>
+        <StyledHr />
+        <StyledSpan>{`주문내역 ${orderQty} 건`}</StyledSpan>
+        <StyledHr />
+        <StyledSpan>{`취소내역 ${cancelQty} 건`}</StyledSpan>
+      </Wrapper>
+      <Wrapper2>{ORDER_AND_SHIPPING_RETRIEVE}</Wrapper2>
+      <Wrapper3>{`총 ${orderQty}건`}</Wrapper3>
+    </>
   );
 };
 
@@ -67,6 +72,20 @@ const StyledSpan = styled.span`
   text-align: center;
   margin: 0 auto;
   justify-content: center;
+`;
+
+const Wrapper2 = styled.h2`
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+`;
+
+const Wrapper3 = styled.div`
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  flex: 1 1 0;
+  justify-content: flex-end;
 `;
 
 export default OrderHistoryHeader;

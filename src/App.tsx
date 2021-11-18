@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Pages from './Pages';
-import Layout from './components/Layout';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const App: FC = () => {
+  const queryClient = new QueryClient();
+
   return (
     <BrowserRouter>
-      <Layout>
+      <QueryClientProvider client={queryClient}>
         <Pages />
-      </Layout>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 };
