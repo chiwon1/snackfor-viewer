@@ -22,7 +22,13 @@ module.exports = {
     project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'html', 'prettier'],
-  rules: { 'spaced-comment': 'off' },
+  rules: {
+    'spaced-comment': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
+    camelcase: 'off',
+    '@typescript-eslint/camelcase': 'off',
+  },
   settings: {
     react: {
       version: 'detect',
