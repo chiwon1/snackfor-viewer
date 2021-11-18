@@ -1,46 +1,104 @@
-# Getting Started with Create React App
+<h1 align="center">
+  Snackfor Viewer
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://flat.badgen.net/badge/Built%20With/TypeScript/blue" alt="Typescript">
+  <img src="https://img.shields.io/badge/Frontend-React-blue.svg" alt="Frontend-React">
+  <a href="https://nostalgic-ramanujan-6d36d9.netlify.app" title="Netlify-deploy-status">
+    <img src="https://api.netlify.com/api/v1/badges/efe8ad68-c228-42ce-97c8-ae6644784b68/deploy-status" alt="Netlify-deploy-status">
+  </a>
+</p>
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+## Index
 
-### `yarn start`
+  <ol>
+    <li><a href="#tech-stack">Tech Stack</a></li>
+    <li><a href="#convention">Convention</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#ui-example">UI example</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#installation">Installation</a></li>
+  </ol>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br/>
+<br/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech Stack
 
-### `yarn test`
+Base  
+`react, typescript`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Style  
+`styled-component`
 
-### `yarn build`
+Caching  
+`react-query`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Convention Management  
+`eslint`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Version Management  
+`git`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
+<br/>
 
-### `yarn eject`
+## Convention
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Coding convetions: [google](https://google.github.io/styleguide/jsguide.html)
+- [Commit message](https://github.com/helderburato/dotfiles/blob/main/git/.gittemplates/commit)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br/>
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 운전자는 장소를 검색하여 카풀 생성
+- 탑승자는 입력한 장소를 기반으로 근거리 카풀 검색 가능
+- 운전자와 탑승자는 실시간 채팅으로 의사소통
 
-## Learn More
+<br/>
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## UI example
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img style="width:700px"
+ src="./readme-assets/ui-example.png" alt="Usepool-Logo">
+
+<br/>
+<br/>
+
+## Demo
+
+[Demo Link](https://nostalgic-ramanujan-6d36d9.netlify.app)
+
+- Netlify를 이용하여 애플리케이션 배포 및 관리
+
+<br/>
+<br/>
+
+## Installation
+
+- 로컬에서 구동을 원하시는 경우 아래와 같이 `.env` 파일 설정이 필요합니다.
+
+### env 설정
+
+```shell
+REACT_APP_TEST_USER_EMAIL=<Your test email>
+```
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Development
+
+```
+npm start
+# Visit <http://localhost:3000> from your browser (Chrome)
+```
