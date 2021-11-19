@@ -3,25 +3,13 @@ import styled from 'styled-components';
 import OrderHistoryHeader from '../components/orderHistoryHeader';
 import { NEXT_BUTTON, PREVIOUS_BUTTON } from '../constants/ui';
 import { useQuery } from 'react-query';
-import { IOrder } from '../types/order';
-import axiosInstance from '../utils/axios';
+import { IFetchOrderListResponse } from '../types/order';
 import Order from '../components/order';
 import Button from '../components/button';
-
-type IFetchOrderListResponse = {
-  count: number;
-  previous: null | string;
-  next: string;
-  results: IOrder[];
-};
+import { fetchOrderList } from '../apis/order';
 
 const OrderHistory: FC = () => {
   const userEmail = process.env.REACT_APP_TEST_USER_EMAIL!;
-
-  const fetchOrderList = () => async () =>
-    await axiosInstance.get(
-      `https://coding-test.snackfor.com/order-groups?user=${userEmail}`,
-    );
 
   const { data: orderInfo, isLoading } = useQuery<
     any,
@@ -109,16 +97,6 @@ const ButtonWrapper = styled.div`
     touch-action: manipulation;
     vertical-align: middle;
     width: 100px;
-  }
-
-  .button-13:hover {
-    background-color: #f7fafa;
-  }
-
-  .button-13:focus {
-    border-color: #008296;
-    box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
-    outline: 0;
   }
 `;
 

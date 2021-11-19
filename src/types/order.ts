@@ -1,4 +1,4 @@
-export interface IOrder {
+interface IOrder {
   uuid: string;
   price: number;
   discount_price: number;
@@ -23,3 +23,10 @@ export interface IOrder {
   zip_code: string;
   user: string;
 }
+
+export type IFetchOrderListResponse = {
+  count: number;
+  previous: null | string;
+  next: string;
+  results: IOrder[];
+};
